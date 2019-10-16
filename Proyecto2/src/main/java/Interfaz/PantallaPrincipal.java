@@ -17,6 +17,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     public PantallaPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        TipoVueloGrupo.add(RadioPlatino);
+        TipoVueloGrupo.add(RadioOro);
+        TipoVueloGrupo.add(RadioEspecial);
     }
 
     /**
@@ -28,6 +31,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TipoVueloGrupo = new javax.swing.ButtonGroup();
+        RadioPlatino = new javax.swing.JRadioButton();
+        RadioEspecial = new javax.swing.JRadioButton();
+        RadioOro = new javax.swing.JRadioButton();
         LugarDestinotxt = new javax.swing.JTextField();
         LugarOrigentxt = new javax.swing.JTextField();
         Nacionalidadtxt = new javax.swing.JTextField();
@@ -45,6 +52,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelEspeciales = new javax.swing.JLabel();
         LabelVIP = new javax.swing.JLabel();
         LabelUsuario = new javax.swing.JLabel();
+        jButtonRegistrar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
@@ -52,6 +60,33 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RadioPlatino.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        RadioPlatino.setText("Platino");
+        RadioPlatino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioPlatinoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RadioPlatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
+
+        RadioEspecial.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        RadioEspecial.setText("Especial");
+        RadioEspecial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioEspecialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RadioEspecial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
+
+        RadioOro.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        RadioOro.setText("Oro");
+        RadioOro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioOroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RadioOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
         getContentPane().add(LugarDestinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, -1));
         getContentPane().add(LugarOrigentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 190, -1));
         getContentPane().add(Nacionalidadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 190, -1));
@@ -61,27 +96,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         LabelDestino.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelDestino.setText("Destino:");
-        getContentPane().add(LabelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 110, -1));
+        getContentPane().add(LabelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 282, 110, -1));
 
         LabelOrigen.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelOrigen.setText("Origen:");
-        getContentPane().add(LabelOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
+        getContentPane().add(LabelOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 242, 110, -1));
 
         LabelNacionalidad.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelNacionalidad.setText("Nacionalidad:");
-        getContentPane().add(LabelNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 150, -1));
+        getContentPane().add(LabelNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 203, 150, -1));
 
         LabelPasaporte.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelPasaporte.setText("Pasaporte:");
-        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 110, -1));
+        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 163, 110, -1));
 
         LabelFecha.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelFecha.setText("Fecha de nacimiento:");
-        getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 340, -1));
+        getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 122, 340, -1));
 
         LabelNombre.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelNombre.setText("Nombre:");
-        getContentPane().add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 110, -1));
+        getContentPane().add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 82, 110, -1));
 
         LineaH.setBackground(new java.awt.Color(0, 0, 0));
         LineaH.setOpaque(true);
@@ -107,6 +142,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelUsuario.setText("Usuario");
         getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, 30));
 
+        jButtonRegistrar.setBackground(null);
+        jButtonRegistrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jButtonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonRegistrar.setText("Registrar");
+        jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 325, 110, 30));
+
         jButtonSalir.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(255, 0, 0));
@@ -129,6 +175,22 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void RadioOroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioOroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioOroActionPerformed
+
+    private void RadioPlatinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioPlatinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioPlatinoActionPerformed
+
+    private void RadioEspecialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioEspecialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioEspecialActionPerformed
+
+    private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +246,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField Nacionalidadtxt;
     private javax.swing.JTextField Nombretxt;
     private javax.swing.JTextField Pasaportetxt;
+    private javax.swing.JRadioButton RadioEspecial;
+    private javax.swing.JRadioButton RadioOro;
+    private javax.swing.JRadioButton RadioPlatino;
+    private javax.swing.ButtonGroup TipoVueloGrupo;
+    private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
     // End of variables declaration//GEN-END:variables
 }
