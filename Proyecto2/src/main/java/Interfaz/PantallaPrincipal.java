@@ -16,6 +16,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,29 +28,107 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        LugarDestinotxt = new javax.swing.JTextField();
+        LugarOrigentxt = new javax.swing.JTextField();
+        Nacionalidadtxt = new javax.swing.JTextField();
+        Pasaportetxt = new javax.swing.JTextField();
+        Fechatxt = new javax.swing.JTextField();
+        Nombretxt = new javax.swing.JTextField();
+        LabelDestino = new javax.swing.JLabel();
+        LabelOrigen = new javax.swing.JLabel();
+        LabelNacionalidad = new javax.swing.JLabel();
+        LabelPasaporte = new javax.swing.JLabel();
+        LabelFecha = new javax.swing.JLabel();
+        LabelNombre = new javax.swing.JLabel();
+        LineaH = new javax.swing.JLabel();
+        LineaV = new javax.swing.JLabel();
+        LabelEspeciales = new javax.swing.JLabel();
+        LabelVIP = new javax.swing.JLabel();
+        LabelUsuario = new javax.swing.JLabel();
+        jButtonSalir = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(LugarDestinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, -1));
+        getContentPane().add(LugarOrigentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 190, -1));
+        getContentPane().add(Nacionalidadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 190, -1));
+        getContentPane().add(Pasaportetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 190, -1));
+        getContentPane().add(Fechatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 190, -1));
+        getContentPane().add(Nombretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 190, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(329, 329, 329)
-                .addComponent(jLabel1)
-                .addContainerGap(671, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(jLabel1)
-                .addContainerGap(410, Short.MAX_VALUE))
-        );
+        LabelDestino.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        LabelDestino.setText("Destino:");
+        getContentPane().add(LabelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 110, -1));
+
+        LabelOrigen.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        LabelOrigen.setText("Origen:");
+        getContentPane().add(LabelOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
+
+        LabelNacionalidad.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        LabelNacionalidad.setText("Nacionalidad:");
+        getContentPane().add(LabelNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 150, -1));
+
+        LabelPasaporte.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        LabelPasaporte.setText("Pasaporte:");
+        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 110, -1));
+
+        LabelFecha.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        LabelFecha.setText("Fecha de nacimiento:");
+        getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 340, -1));
+
+        LabelNombre.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        LabelNombre.setText("Nombre:");
+        getContentPane().add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 110, -1));
+
+        LineaH.setBackground(new java.awt.Color(0, 0, 0));
+        LineaH.setOpaque(true);
+        getContentPane().add(LineaH, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 298, 500, 3));
+
+        LineaV.setBackground(new java.awt.Color(0, 0, 0));
+        LineaV.setOpaque(true);
+        getContentPane().add(LineaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 3, 600));
+
+        LabelEspeciales.setBackground(null);
+        LabelEspeciales.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        LabelEspeciales.setText("Especiales");
+        getContentPane().add(LabelEspeciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, -1, -1));
+
+        LabelVIP.setBackground(null);
+        LabelVIP.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        LabelVIP.setText("VIP");
+        LabelVIP.setToolTipText("");
+        getContentPane().add(LabelVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
+
+        LabelUsuario.setBackground(null);
+        LabelUsuario.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        LabelUsuario.setText("Usuario");
+        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, 30));
+
+        jButtonSalir.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonSalir.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonSalir.setText("X");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(953, 5, 40, 30));
+
+        Fondo.setBackground(new java.awt.Color(255, 125, 0));
+        Fondo.setForeground(new java.awt.Color(255, 125, 0));
+        Fondo.setOpaque(true);
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,6 +166,24 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField Fechatxt;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel LabelDestino;
+    private javax.swing.JLabel LabelEspeciales;
+    private javax.swing.JLabel LabelFecha;
+    private javax.swing.JLabel LabelNacionalidad;
+    private javax.swing.JLabel LabelNombre;
+    private javax.swing.JLabel LabelOrigen;
+    private javax.swing.JLabel LabelPasaporte;
+    private javax.swing.JLabel LabelUsuario;
+    private javax.swing.JLabel LabelVIP;
+    private javax.swing.JLabel LineaH;
+    private javax.swing.JLabel LineaV;
+    private javax.swing.JTextField LugarDestinotxt;
+    private javax.swing.JTextField LugarOrigentxt;
+    private javax.swing.JTextField Nacionalidadtxt;
+    private javax.swing.JTextField Nombretxt;
+    private javax.swing.JTextField Pasaportetxt;
+    private javax.swing.JButton jButtonSalir;
     // End of variables declaration//GEN-END:variables
 }
