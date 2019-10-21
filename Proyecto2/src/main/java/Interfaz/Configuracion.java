@@ -32,11 +32,13 @@ public class Configuracion extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         RangoMax = new javax.swing.JTextField();
         RangoMin = new javax.swing.JTextField();
+        CantPuertasVIP = new javax.swing.JTextField();
         CantPuertas = new javax.swing.JTextField();
         LabelMaximo = new javax.swing.JLabel();
         LabelMinimo = new javax.swing.JLabel();
         LabelRango = new javax.swing.JLabel();
         LabelEstructura = new javax.swing.JLabel();
+        LabelPuertasVIP = new javax.swing.JLabel();
         LabelPuertas = new javax.swing.JLabel();
         LabelConfiguracion = new javax.swing.JLabel();
         ButtonAceptar = new javax.swing.JButton();
@@ -49,7 +51,7 @@ public class Configuracion extends javax.swing.JFrame {
 
         jComboBox1.setFont(new java.awt.Font("Consolas", 1, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Árboles Heap", "Cola de prioridad" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 97, 160, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 160, -1));
 
         RangoMax.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         RangoMax.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +59,7 @@ public class Configuracion extends javax.swing.JFrame {
                 RangoMaxActionPerformed(evt);
             }
         });
-        getContentPane().add(RangoMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 187, 50, -1));
+        getContentPane().add(RangoMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 218, 50, -1));
 
         RangoMin.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         RangoMin.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +67,15 @@ public class Configuracion extends javax.swing.JFrame {
                 RangoMinActionPerformed(evt);
             }
         });
-        getContentPane().add(RangoMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 187, 50, -1));
+        getContentPane().add(RangoMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 217, 50, -1));
+
+        CantPuertasVIP.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        CantPuertasVIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CantPuertasVIPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CantPuertasVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 88, 50, -1));
 
         CantPuertas.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         CantPuertas.addActionListener(new java.awt.event.ActionListener() {
@@ -73,27 +83,31 @@ public class Configuracion extends javax.swing.JFrame {
                 CantPuertasActionPerformed(evt);
             }
         });
-        getContentPane().add(CantPuertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 56, 50, -1));
+        getContentPane().add(CantPuertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 58, 50, -1));
 
         LabelMaximo.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         LabelMaximo.setText("Máximo:");
-        getContentPane().add(LabelMaximo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 70, 40));
+        getContentPane().add(LabelMaximo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 70, 40));
 
         LabelMinimo.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         LabelMinimo.setText("Mínimo:");
-        getContentPane().add(LabelMinimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 70, 40));
+        getContentPane().add(LabelMinimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 70, 40));
 
         LabelRango.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         LabelRango.setText("Rango de tiempo para la puerta de salida:");
-        getContentPane().add(LabelRango, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 440, 40));
+        getContentPane().add(LabelRango, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 440, 40));
 
         LabelEstructura.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
         LabelEstructura.setText("Tipo de estructura: ");
-        getContentPane().add(LabelEstructura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 40));
+        getContentPane().add(LabelEstructura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 200, 40));
+
+        LabelPuertasVIP.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        LabelPuertasVIP.setText("Cantidad de puertas VIP:");
+        getContentPane().add(LabelPuertasVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 250, 40));
 
         LabelPuertas.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        LabelPuertas.setText("Cantidad de puertas:");
-        getContentPane().add(LabelPuertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 200, 40));
+        LabelPuertas.setText("Cantidad de puertas normales:");
+        getContentPane().add(LabelPuertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 290, 40));
 
         LabelConfiguracion.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         LabelConfiguracion.setText("Configuración");
@@ -147,6 +161,10 @@ public class Configuracion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
+    private void CantPuertasVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantPuertasVIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CantPuertasVIPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -185,12 +203,14 @@ public class Configuracion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAceptar;
     private javax.swing.JTextField CantPuertas;
+    private javax.swing.JTextField CantPuertasVIP;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel LabelConfiguracion;
     private javax.swing.JLabel LabelEstructura;
     private javax.swing.JLabel LabelMaximo;
     private javax.swing.JLabel LabelMinimo;
     private javax.swing.JLabel LabelPuertas;
+    private javax.swing.JLabel LabelPuertasVIP;
     private javax.swing.JLabel LabelRango;
     private javax.swing.JTextField RangoMax;
     private javax.swing.JTextField RangoMin;

@@ -16,6 +16,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        BotonesVIP.add(RadioOro);
+        BotonesVIP.add(RadioPlatino);
         this.setLocationRelativeTo(null);
         
     }
@@ -29,12 +31,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BotonesVIP = new javax.swing.ButtonGroup();
+        RadioPreferencial = new javax.swing.JRadioButton();
+        RadioPlatino = new javax.swing.JRadioButton();
+        RadioOro = new javax.swing.JRadioButton();
         LugarDestinotxt = new javax.swing.JTextField();
         LugarOrigentxt = new javax.swing.JTextField();
         Nacionalidadtxt = new javax.swing.JTextField();
         Pasaportetxt = new javax.swing.JTextField();
         Fechatxt = new javax.swing.JTextField();
         Nombretxt = new javax.swing.JTextField();
+        LabelSalida = new javax.swing.JLabel();
         LabelDestino = new javax.swing.JLabel();
         LabelOrigen = new javax.swing.JLabel();
         LabelNacionalidad = new javax.swing.JLabel();
@@ -54,57 +61,75 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(LugarDestinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, -1));
-        getContentPane().add(LugarOrigentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 190, -1));
-        getContentPane().add(Nacionalidadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 190, -1));
-        getContentPane().add(Pasaportetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 190, -1));
-        getContentPane().add(Fechatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 190, -1));
-        getContentPane().add(Nombretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 190, -1));
+
+        RadioPreferencial.setText("Preferencial");
+        RadioPreferencial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioPreferencialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(RadioPreferencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
+
+        RadioPlatino.setText("Platino");
+        getContentPane().add(RadioPlatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
+
+        RadioOro.setText("Oro");
+        getContentPane().add(RadioOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        getContentPane().add(LugarDestinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 190, -1));
+        getContentPane().add(LugarOrigentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, -1));
+        getContentPane().add(Nacionalidadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 190, -1));
+        getContentPane().add(Pasaportetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 190, -1));
+        getContentPane().add(Fechatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 190, -1));
+        getContentPane().add(Nombretxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 190, -1));
+
+        LabelSalida.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
+        LabelSalida.setText("Salidas");
+        getContentPane().add(LabelSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, -1, -1));
 
         LabelDestino.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelDestino.setText("Destino:");
-        getContentPane().add(LabelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 282, 110, -1));
+        getContentPane().add(LabelDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 210, -1, -1));
 
         LabelOrigen.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelOrigen.setText("Origen:");
-        getContentPane().add(LabelOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 242, 110, -1));
+        getContentPane().add(LabelOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 180, -1, -1));
 
         LabelNacionalidad.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelNacionalidad.setText("Nacionalidad:");
-        getContentPane().add(LabelNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 203, 150, -1));
+        getContentPane().add(LabelNacionalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 150, 150, -1));
 
         LabelPasaporte.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelPasaporte.setText("Pasaporte:");
-        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 163, 110, -1));
+        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 110, -1));
 
         LabelFecha.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelFecha.setText("Fecha de nacimiento:");
-        getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 122, 340, -1));
+        getContentPane().add(LabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 230, -1));
 
         LabelNombre.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelNombre.setText("Nombre:");
-        getContentPane().add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 82, 110, -1));
+        getContentPane().add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 60, 80, -1));
 
         LineaH.setBackground(new java.awt.Color(0, 0, 0));
         LineaH.setOpaque(true);
-        getContentPane().add(LineaH, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 298, 500, 3));
+        getContentPane().add(LineaH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 298, 1000, 3));
 
         LineaV.setBackground(new java.awt.Color(0, 0, 0));
         LineaV.setOpaque(true);
         getContentPane().add(LineaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 3, 600));
 
         LabelEspeciales.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        LabelEspeciales.setText("Especiales");
-        getContentPane().add(LabelEspeciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, -1, -1));
+        LabelEspeciales.setText("Preferencial");
+        getContentPane().add(LabelEspeciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
 
         LabelVIP.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
         LabelVIP.setText("VIP");
         LabelVIP.setToolTipText("");
-        getContentPane().add(LabelVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, -1, -1));
+        getContentPane().add(LabelVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, -1));
 
         LabelUsuario.setFont(new java.awt.Font("Consolas", 1, 30)); // NOI18N
-        LabelUsuario.setText("Usuario");
-        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, 30));
+        LabelUsuario.setText("Registro");
+        getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, -1));
 
         jButtonRegistrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jButtonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
@@ -114,7 +139,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jButtonRegistrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 325, 110, 30));
+        getContentPane().add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 110, 30));
 
         jButtonSalir.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -142,6 +167,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
+
+    private void RadioPreferencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioPreferencialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RadioPreferencialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +208,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup BotonesVIP;
     private javax.swing.JTextField Fechatxt;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel LabelDestino;
@@ -188,6 +218,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNombre;
     private javax.swing.JLabel LabelOrigen;
     private javax.swing.JLabel LabelPasaporte;
+    private javax.swing.JLabel LabelSalida;
     private javax.swing.JLabel LabelUsuario;
     private javax.swing.JLabel LabelVIP;
     private javax.swing.JLabel LineaH;
@@ -197,6 +228,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField Nacionalidadtxt;
     private javax.swing.JTextField Nombretxt;
     private javax.swing.JTextField Pasaportetxt;
+    private javax.swing.JRadioButton RadioOro;
+    private javax.swing.JRadioButton RadioPlatino;
+    private javax.swing.JRadioButton RadioPreferencial;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
     // End of variables declaration//GEN-END:variables
