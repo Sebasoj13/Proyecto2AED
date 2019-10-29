@@ -4,6 +4,7 @@ public class LQueue<T> {
 	
 	private Node<T> front;
 	private Node<T> rear;
+        private int prioridad;
 	private int size;
 	
 	public LQueue(){
@@ -53,7 +54,7 @@ public class LQueue<T> {
 	
 	public String toString(){
 		String result = "**LQueue**\n";
-		Node<T> tFront = this.front;
+		Node tFront = this.front;
 		int tSize = this.size;
 		while(tSize != 0){
 			result+= tFront.getNext().getElement() + " ";

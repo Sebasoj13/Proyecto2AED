@@ -75,7 +75,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         LabelPasaporte.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelPasaporte.setText("Pasaporte:");
-        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 163, 110, -1));
+        getContentPane().add(LabelPasaporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 120, -1));
 
         LabelFecha.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
         LabelFecha.setText("Fecha de nacimiento:");
@@ -107,7 +107,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 120, 30));
 
         jButtonRegistrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        jButtonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegistrar.setText("Registrar");
         jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
