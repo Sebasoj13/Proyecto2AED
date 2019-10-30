@@ -1,23 +1,191 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
-/**
- *
- * @author Sebas
- */
-public class PantallaPrincipal extends javax.swing.JFrame {
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
 
-    /**
-     * Creates new form PantallaPrincipal
-     */
-    public PantallaPrincipal() {
+
+        
+public class PantallaPrincipal extends javax.swing.JFrame {
+    JTextArea cola1 = new JTextArea(); 
+    JTextArea cola2 = new JTextArea();
+    JTextArea cola3 = new JTextArea();
+    JTextArea cola4 = new JTextArea();
+    JTextArea cola5 = new JTextArea();
+    
+    JTextArea colaV1 = new JTextArea();
+    JTextArea colaV2 = new JTextArea();
+    JTextArea colaV3 = new JTextArea();
+    JTextArea colaV4 = new JTextArea();
+    JTextArea colaV5 = new JTextArea();
+    
+    
+    JButton atenderV1 = new JButton("Atender");
+    JButton atenderV2 = new JButton("Atender");
+    JButton atenderV3 = new JButton("Atender");
+    JButton atenderV4 = new JButton("Atender");
+    JButton atenderV5 = new JButton("Atender");
+    
+    JButton atender1 = new JButton("Atender");
+    JButton atender2 = new JButton("Atender");
+    JButton atender3 = new JButton("Atender");
+    JButton atender4 = new JButton("Atender");
+    JButton atender5 = new JButton("Atender");
+    
+    
+    
+    public PantallaPrincipal(int numeroVip, int numeroNormal, int tiempoSalida) {
         initComponents();
+        switch(numeroVip){
+            case 0: break;
+            
+            case 1: colaV1.setEditable(false);
+                    panelVIP.add(colaV1);
+                    atenderV1.setFont(new Font("Consolas", Font.BOLD, 40));
+                    panelVIP.add(atenderV1);
+                    break;
+                    
+            case 2: colaV1.setEditable(false);
+                    panelVIP.add(colaV1);
+                    atenderV1.setFont(new Font("Consolas", Font.BOLD, 35));
+                    panelVIP.add(atenderV1);
+                    colaV2.setEditable(false);
+                    panelVIP.add(colaV2);
+                    atenderV2.setFont(new Font("Consolas", Font.BOLD, 35));
+                    panelVIP.add(atenderV2);
+                    break;
+                    
+            case 3: colaV1.setEditable(false);
+                    panelVIP.add(colaV1);
+                    atenderV1.setFont(new Font("Consolas", Font.BOLD, 30));
+                    panelVIP.add(atenderV1);
+                    colaV2.setEditable(false);
+                    panelVIP.add(colaV2);
+                    atenderV2.setFont(new Font("Consolas", Font.BOLD, 30));
+                    panelVIP.add(atenderV2);
+                    colaV3.setEditable(false);
+                    panelVIP.add(colaV3);
+                    atenderV3.setFont(new Font("Consolas", Font.BOLD, 30));
+                    panelVIP.add(atenderV3);
+                    break;
+                    
+            case 4: colaV1.setEditable(false);
+                    panelVIP.add(colaV1);
+                    atenderV1.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelVIP.add(atenderV1);
+                    colaV2.setEditable(false);
+                    panelVIP.add(colaV2);
+                    atenderV2.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelVIP.add(atenderV2);
+                    colaV3.setEditable(false);
+                    panelVIP.add(colaV3);
+                    atenderV3.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelVIP.add(atenderV3);
+                    colaV4.setEditable(false);
+                    panelVIP.add(colaV4);
+                    atenderV4.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelVIP.add(atenderV4);
+                    break;
+                    
+            case 5: colaV1.setEditable(false);
+                    panelVIP.add(colaV1);
+                    atenderV1.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelVIP.add(atenderV1);
+                    colaV2.setEditable(false);
+                    panelVIP.add(colaV2);
+                    atenderV2.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelVIP.add(atenderV2);
+                    colaV3.setEditable(false);
+                    panelVIP.add(colaV3);
+                    atenderV3.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelVIP.add(atenderV3);
+                    colaV4.setEditable(false);
+                    panelVIP.add(colaV4);
+                    atenderV4.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelVIP.add(atenderV4);
+                    colaV5.setEditable(false);
+                    panelVIP.add(colaV5);
+                    atenderV5.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelVIP.add(atenderV5);
+                    break;
+        }
+        
+        switch(numeroNormal){
+            case 0: break;
+            
+            case 1: cola1.setEditable(false);
+                    panelPreferencial.add(cola1);
+                    atender1.setFont(new Font("Consolas", Font.BOLD, 40));
+                    panelPreferencial.add(atender1);
+                    break;
+                    
+            case 2: cola1.setEditable(false);
+                    panelPreferencial.add(cola1);
+                    atender1.setFont(new Font("Consolas", Font.BOLD, 35));
+                    panelPreferencial.add(atender1);
+                    cola2.setEditable(false);
+                    panelPreferencial.add(cola2);
+                    atender2.setFont(new Font("Consolas", Font.BOLD, 35));
+                    panelPreferencial.add(atender2);
+                    break;
+                    
+            case 3: cola1.setEditable(false);
+                    panelPreferencial.add(cola1);
+                    atender1.setFont(new Font("Consolas", Font.BOLD, 30));
+                    panelPreferencial.add(atender1);
+                    cola2.setEditable(false);
+                    panelPreferencial.add(cola2);
+                    atender2.setFont(new Font("Consolas", Font.BOLD, 30));
+                    panelPreferencial.add(atender2);
+                    cola3.setEditable(false);
+                    panelPreferencial.add(cola3);
+                    atender3.setFont(new Font("Consolas", Font.BOLD, 30));
+                    panelPreferencial.add(atender3);
+                    break;
+                    
+            case 4: cola1.setEditable(false);
+                    panelPreferencial.add(cola1);
+                    atender1.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelPreferencial.add(atender1);                    
+                    cola2.setEditable(false);
+                    panelPreferencial.add(cola2);
+                    atender2.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelPreferencial.add(atender2);
+                    cola3.setEditable(false);
+                    panelPreferencial.add(cola3);
+                    atender3.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelPreferencial.add(atender3);
+                    cola4.setEditable(false);
+                    panelPreferencial.add(cola4);
+                    atender4.setFont(new Font("Consolas", Font.BOLD, 25));
+                    panelPreferencial.add(atender4);
+                    break;
+                    
+            case 5: cola1.setEditable(false);
+                    panelPreferencial.add(cola1);
+                    atender1.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelPreferencial.add(atender1);
+                    cola2.setEditable(false);
+                    panelPreferencial.add(cola2);
+                    atender2.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelPreferencial.add(atender2);
+                    cola3.setEditable(false);
+                    panelPreferencial.add(cola3);
+                    atender3.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelPreferencial.add(atender3);
+                    cola4.setEditable(false);
+                    panelPreferencial.add(cola4);
+                    atender4.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelPreferencial.add(atender4);
+                    cola5.setEditable(false);
+                    panelPreferencial.add(cola5);
+                    atender5.setFont(new Font("Consolas", Font.BOLD, 20));
+                    panelPreferencial.add(atender5);
+                    break;            
+        }
         BotonesVIP.add(RadioOro);
         BotonesVIP.add(RadioPlatino);
+        BotonesVIP.add(RadioNormal);
         this.setLocationRelativeTo(null);
         
     }
@@ -32,6 +200,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         BotonesVIP = new javax.swing.ButtonGroup();
+        RadioNormal = new javax.swing.JRadioButton();
         RadioPreferencial = new javax.swing.JRadioButton();
         RadioPlatino = new javax.swing.JRadioButton();
         RadioOro = new javax.swing.JRadioButton();
@@ -53,6 +222,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelEspeciales = new javax.swing.JLabel();
         LabelVIP = new javax.swing.JLabel();
         LabelUsuario = new javax.swing.JLabel();
+        panelPreferencial = new javax.swing.JPanel();
+        panelVIP = new javax.swing.JPanel();
         jButtonRegistrar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
@@ -62,19 +233,23 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        RadioNormal.setSelected(true);
+        RadioNormal.setText("Normal");
+        getContentPane().add(RadioNormal, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 273, -1, -1));
+
         RadioPreferencial.setText("Preferencial");
         RadioPreferencial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RadioPreferencialActionPerformed(evt);
             }
         });
-        getContentPane().add(RadioPreferencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
+        getContentPane().add(RadioPreferencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 245, -1, -1));
 
         RadioPlatino.setText("Platino");
-        getContentPane().add(RadioPlatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
+        getContentPane().add(RadioPlatino, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 245, -1, -1));
 
         RadioOro.setText("Oro");
-        getContentPane().add(RadioOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        getContentPane().add(RadioOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 245, -1, -1));
         getContentPane().add(LugarDestinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 190, -1));
         getContentPane().add(LugarOrigentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, -1));
         getContentPane().add(Nacionalidadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 190, -1));
@@ -131,6 +306,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelUsuario.setText("Registro");
         getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, -1));
 
+        panelPreferencial.setBackground(new java.awt.Color(255, 125, 0));
+        panelPreferencial.setLayout(new java.awt.GridLayout(0, 2));
+        getContentPane().add(panelPreferencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 450, 250));
+
+        panelVIP.setBackground(new java.awt.Color(255, 125, 0));
+        panelVIP.setLayout(new java.awt.GridLayout(0, 2));
+        getContentPane().add(panelVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 460, 230));
+
         jButtonRegistrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jButtonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegistrar.setText("Registrar");
@@ -166,6 +349,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         // TODO add your handling code here:
+        if (RadioPreferencial.isSelected()){
+            System.out.println("Preferencial");
+        }
+        if (RadioOro.isSelected()){
+            System.out.println("Oro");
+        }
+        if (RadioPlatino.isSelected()){
+            System.out.println("Platino");
+        }
+        else {
+            System.out.println("Normal");
+        }
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
     private void RadioPreferencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioPreferencialActionPerformed
@@ -202,7 +397,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaPrincipal().setVisible(true);
+                new PantallaPrincipal(1, 1, 1).setVisible(true);
             }
         });
     }
@@ -228,10 +423,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField Nacionalidadtxt;
     private javax.swing.JTextField Nombretxt;
     private javax.swing.JTextField Pasaportetxt;
+    private javax.swing.JRadioButton RadioNormal;
     private javax.swing.JRadioButton RadioOro;
     private javax.swing.JRadioButton RadioPlatino;
     private javax.swing.JRadioButton RadioPreferencial;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
+    private javax.swing.JPanel panelPreferencial;
+    private javax.swing.JPanel panelVIP;
     // End of variables declaration//GEN-END:variables
 }

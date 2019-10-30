@@ -5,6 +5,8 @@
  */
 package Interfaz;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sebas
@@ -158,7 +160,32 @@ public class Configuracion extends javax.swing.JFrame {
     }//GEN-LAST:event_RangoMaxActionPerformed
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
-        // TODO add your handling code here:
+        try {
+            int nVIP = Integer.parseInt(CantPuertasVIP.getText());
+            int nNormal = Integer.parseInt(CantPuertas.getText());
+            if (nVIP>5){
+                JOptionPane.showMessageDialog(null, "Las puertas deben tener un valor menor a o igual a 5");
+                return;
+            }
+            if (nNormal>5){
+                JOptionPane.showMessageDialog(null, "Las puertas deben tener un valor menor o igual a 5");
+                return;
+            }
+            int max = Integer.parseInt(RangoMax.getText());
+            int min = Integer.parseInt(RangoMin.getText());
+            if (max<min){
+                JOptionPane.showMessageDialog(null, "El numero de rango mínimo excede al máximo.");
+                return; 
+            }
+            int tiempo = (int) Math.floor(Math.random()*(max-min+1)+min);
+            System.out.println(tiempo);
+            PantallaPrincipal ventana = new PantallaPrincipal(nVIP, nNormal, tiempo);
+            ventana.setVisible(true);
+            this.setVisible(false);
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "En las casillas se deben de introducir valores numéricos solamente.");
+        }
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void CantPuertasVIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CantPuertasVIPActionPerformed
