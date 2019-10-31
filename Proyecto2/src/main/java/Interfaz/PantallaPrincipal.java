@@ -3,25 +3,39 @@ package Interfaz;
 import Estructuras.Cola;
 import Estructuras.Usuario;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 
 
         
 public class PantallaPrincipal extends javax.swing.JFrame {
     
-    JTextArea cola1 = new JTextArea(); 
+    JTextArea cola1 = new JTextArea();
+    JScrollPane scroll1 = new JScrollPane(cola1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea cola2 = new JTextArea();
+    JScrollPane scroll2 = new JScrollPane(cola2, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea cola3 = new JTextArea();
+    JScrollPane scroll3 = new JScrollPane(cola3, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea cola4 = new JTextArea();
+    JScrollPane scroll4 = new JScrollPane(cola4, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea cola5 = new JTextArea();
+    JScrollPane scroll5 = new JScrollPane(cola5, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     
     JTextArea colaV1 = new JTextArea();
+    JScrollPane Vscroll1 = new JScrollPane(colaV1, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea colaV2 = new JTextArea();
+    JScrollPane Vscroll2 = new JScrollPane(colaV2, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea colaV3 = new JTextArea();
+    JScrollPane Vscroll3 = new JScrollPane(colaV3, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea colaV4 = new JTextArea();
+    JScrollPane Vscroll4 = new JScrollPane(colaV4, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     JTextArea colaV5 = new JTextArea();
+    JScrollPane Vscroll5 = new JScrollPane(colaV5, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     
     
     JButton atenderV1 = new JButton("Atender");
@@ -36,91 +50,110 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     JButton atender4 = new JButton("Atender");
     JButton atender5 = new JButton("Atender");
     
-    Cola colaVIP1 = new Cola();
-    Cola colaVIP2 = new Cola();
-    Cola colaVIP3 = new Cola();
-    Cola colaVIP4 = new Cola();
-    Cola colaVIP5 = new Cola();
+    Cola colaVIP = new Cola();
     
-    Cola colaNormal1 = new Cola();
-    Cola colaNormal2 = new Cola();
-    Cola colaNormal3 = new Cola();
-    Cola colaNormal4 = new Cola();
-    Cola colaNormal5 = new Cola();
+    Cola colaPref = new Cola();
+    
+    Cola colaNormal = new Cola();
     
     Cola salidas = new Cola();
-    
     public PantallaPrincipal(int numeroVip, int numeroNormal, int tiempoSalida) {
         initComponents();
+        ActionListener accionAtender1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String datos = cola1.getText();
+                String[] partes = datos.split(" ");
+                String Nombre = partes[1];
+                String Pas = partes[3];
+                Salidas.append("Nombre: "+Nombre+" Pasaporte: "+Pas+"\n");
+                panelSalidas.updateUI();
+            }
+        };
+    
+        ActionListener accionAtenderV1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String datos = colaV1.getText();
+                String[] partes = datos.split(" ");
+                String Nombre = partes[1];
+                String Pas = partes[3];
+                Salidas.append("Nombre: "+Nombre+" Pasaporte: "+Pas+"\n");
+                panelSalidas.updateUI();
+            }
+        };
+        
+        atenderV1.addActionListener(accionAtenderV1);
+        atender1.addActionListener(accionAtender1);
         switch(numeroVip){
             case 0: break;
             
             case 1: colaV1.setEditable(false);
-                    panelVIP.add(colaV1);
+                    panelVIP.add(Vscroll1);
                     atenderV1.setFont(new Font("Consolas", Font.BOLD, 40));
                     panelVIP.add(atenderV1);
                     break;
                     
             case 2: colaV1.setEditable(false);
-                    panelVIP.add(colaV1);
+                    panelVIP.add(Vscroll1);
                     atenderV1.setFont(new Font("Consolas", Font.BOLD, 35));
                     panelVIP.add(atenderV1);
                     colaV2.setEditable(false);
-                    panelVIP.add(colaV2);
+                    panelVIP.add(Vscroll2);
                     atenderV2.setFont(new Font("Consolas", Font.BOLD, 35));
                     panelVIP.add(atenderV2);
                     break;
                     
             case 3: colaV1.setEditable(false);
-                    panelVIP.add(colaV1);
+                    panelVIP.add(Vscroll1);
                     atenderV1.setFont(new Font("Consolas", Font.BOLD, 30));
                     panelVIP.add(atenderV1);
                     colaV2.setEditable(false);
-                    panelVIP.add(colaV2);
+                    panelVIP.add(Vscroll2);
                     atenderV2.setFont(new Font("Consolas", Font.BOLD, 30));
                     panelVIP.add(atenderV2);
                     colaV3.setEditable(false);
-                    panelVIP.add(colaV3);
+                    panelVIP.add(Vscroll3);
                     atenderV3.setFont(new Font("Consolas", Font.BOLD, 30));
                     panelVIP.add(atenderV3);
                     break;
                     
             case 4: colaV1.setEditable(false);
-                    panelVIP.add(colaV1);
+                    panelVIP.add(Vscroll1);
                     atenderV1.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelVIP.add(atenderV1);
                     colaV2.setEditable(false);
-                    panelVIP.add(colaV2);
+                    panelVIP.add(Vscroll2);
                     atenderV2.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelVIP.add(atenderV2);
                     colaV3.setEditable(false);
-                    panelVIP.add(colaV3);
+                    panelVIP.add(Vscroll3);
                     atenderV3.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelVIP.add(atenderV3);
                     colaV4.setEditable(false);
-                    panelVIP.add(colaV4);
+                    panelVIP.add(Vscroll4);
                     atenderV4.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelVIP.add(atenderV4);
                     break;
                     
             case 5: colaV1.setEditable(false);
-                    panelVIP.add(colaV1);
+                    panelVIP.add(Vscroll1);
                     atenderV1.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelVIP.add(atenderV1);
                     colaV2.setEditable(false);
-                    panelVIP.add(colaV2);
+                    panelVIP.add(Vscroll2);
                     atenderV2.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelVIP.add(atenderV2);
                     colaV3.setEditable(false);
-                    panelVIP.add(colaV3);
+                    panelVIP.add(Vscroll3);
                     atenderV3.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelVIP.add(atenderV3);
                     colaV4.setEditable(false);
-                    panelVIP.add(colaV4);
+                    panelVIP.add(Vscroll4);
                     atenderV4.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelVIP.add(atenderV4);
                     colaV5.setEditable(false);
-                    panelVIP.add(colaV5);
+                    panelVIP.add(Vscroll5);
                     atenderV5.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelVIP.add(atenderV5);
                     break;
@@ -130,71 +163,71 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             case 0: break;
             
             case 1: cola1.setEditable(false);
-                    panelPreferencial.add(cola1);
+                    panelPreferencial.add(scroll1);
                     atender1.setFont(new Font("Consolas", Font.BOLD, 40));
                     panelPreferencial.add(atender1);
                     break;
                     
             case 2: cola1.setEditable(false);
-                    panelPreferencial.add(cola1);
+                    panelPreferencial.add(scroll1);
                     atender1.setFont(new Font("Consolas", Font.BOLD, 35));
                     panelPreferencial.add(atender1);
                     cola2.setEditable(false);
-                    panelPreferencial.add(cola2);
+                    panelPreferencial.add(scroll2);
                     atender2.setFont(new Font("Consolas", Font.BOLD, 35));
                     panelPreferencial.add(atender2);
                     break;
                     
             case 3: cola1.setEditable(false);
-                    panelPreferencial.add(cola1);
+                    panelPreferencial.add(scroll1);
                     atender1.setFont(new Font("Consolas", Font.BOLD, 30));
                     panelPreferencial.add(atender1);
                     cola2.setEditable(false);
-                    panelPreferencial.add(cola2);
+                    panelPreferencial.add(scroll2);
                     atender2.setFont(new Font("Consolas", Font.BOLD, 30));
                     panelPreferencial.add(atender2);
                     cola3.setEditable(false);
-                    panelPreferencial.add(cola3);
+                    panelPreferencial.add(scroll3);
                     atender3.setFont(new Font("Consolas", Font.BOLD, 30));
                     panelPreferencial.add(atender3);
                     break;
                     
             case 4: cola1.setEditable(false);
-                    panelPreferencial.add(cola1);
+                    panelPreferencial.add(scroll1);
                     atender1.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelPreferencial.add(atender1);                    
                     cola2.setEditable(false);
-                    panelPreferencial.add(cola2);
+                    panelPreferencial.add(scroll2);
                     atender2.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelPreferencial.add(atender2);
                     cola3.setEditable(false);
-                    panelPreferencial.add(cola3);
+                    panelPreferencial.add(scroll3);
                     atender3.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelPreferencial.add(atender3);
                     cola4.setEditable(false);
-                    panelPreferencial.add(cola4);
+                    panelPreferencial.add(scroll4);
                     atender4.setFont(new Font("Consolas", Font.BOLD, 25));
                     panelPreferencial.add(atender4);
                     break;
                     
             case 5: cola1.setEditable(false);
-                    panelPreferencial.add(cola1);
+                    panelPreferencial.add(scroll1);
                     atender1.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelPreferencial.add(atender1);
                     cola2.setEditable(false);
-                    panelPreferencial.add(cola2);
+                    panelPreferencial.add(scroll2);
                     atender2.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelPreferencial.add(atender2);
                     cola3.setEditable(false);
-                    panelPreferencial.add(cola3);
+                    panelPreferencial.add(scroll3);
                     atender3.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelPreferencial.add(atender3);
                     cola4.setEditable(false);
-                    panelPreferencial.add(cola4);
+                    panelPreferencial.add(scroll4);
                     atender4.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelPreferencial.add(atender4);
                     cola5.setEditable(false);
-                    panelPreferencial.add(cola5);
+                    panelPreferencial.add(scroll5);
                     atender5.setFont(new Font("Consolas", Font.BOLD, 20));
                     panelPreferencial.add(atender5);
                     break;            
@@ -240,7 +273,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelUsuario = new javax.swing.JLabel();
         panelSalidas = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        Salidas = new javax.swing.JTextArea();
         panelPreferencial = new javax.swing.JPanel();
         panelVIP = new javax.swing.JPanel();
         jButtonAtenderSalida = new javax.swing.JButton();
@@ -329,9 +362,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelSalidas.setBackground(new java.awt.Color(255, 125, 0));
         panelSalidas.setLayout(new java.awt.GridLayout(0, 1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Salidas.setEditable(false);
+        Salidas.setColumns(20);
+        Salidas.setRows(5);
+        jScrollPane1.setViewportView(Salidas);
 
         panelSalidas.add(jScrollPane1);
 
@@ -347,6 +381,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jButtonAtenderSalida.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jButtonAtenderSalida.setText("Atender");
+        jButtonAtenderSalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAtenderSalidaActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonAtenderSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 560, 110, 30));
 
         jButtonRegistrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
@@ -408,24 +447,54 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             return;
         }
         Usuario User = new Usuario(Nombretxt.getText(), Fechatxt.getText(), Pasaportetxt.getText(), Nacionalidadtxt.getText(), Origentxt.getText(), Destinotxt.getText());  //Creacion de usuario.
-        if (RadioPreferencial.isSelected()){
+        if (RadioPreferencial.isSelected() && RadioOro.isSelected()){
             System.out.println("Preferencial");
+            colaPref.encolar(User, 3);
+            cola1.append("Nombre: "+Nombretxt.getText()+" Pasaporte: "+Pasaportetxt.getText()+"\n");
+            panelPreferencial.updateUI();
+            return;
             
         }
-        if (RadioOro.isSelected()){
+        if (RadioPreferencial.isSelected() && RadioPlatino.isSelected()){
             System.out.println("Oro");
+            colaPref.encolar(User, 1);
+            cola1.append("Nombre: "+Nombretxt.getText()+" Pasaporte: "+Pasaportetxt.getText()+"\n");
+            panelPreferencial.updateUI();
+            return;
         }
         if (RadioPlatino.isSelected()){
             System.out.println("Platino");
+            colaVIP.encolar(User, 2);
+            colaV1.append("Nombre: "+Nombretxt.getText()+" Pasaporte: "+Pasaportetxt.getText()+"\n");
+            panelVIP.updateUI();
+            return;
         }
-        else {
+        if (RadioOro.isSelected()){
+            System.out.println("Oro");
+            colaVIP.encolar(User, 2);
+            colaV1.append("Nombre: "+Nombretxt.getText()+" Pasaporte: "+Pasaportetxt.getText()+"\n");
+            panelVIP.updateUI();
+            return;
+        }
+        else{
             System.out.println("Normal");
+            colaNormal.encolar(User, 0);
+            cola1.append("Nombre: "+Nombretxt.getText()+" Pasaporte: "+Pasaportetxt.getText()+"\n");
+            panelPreferencial.updateUI();
         }
+        
+        
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
 
     private void RadioPreferencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioPreferencialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RadioPreferencialActionPerformed
+
+    private void jButtonAtenderSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtenderSalidaActionPerformed
+        String datosSalida = Salidas.getText();
+        String[] partesSalida = datosSalida.split(" ");
+        
+    }//GEN-LAST:event_jButtonAtenderSalidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -460,7 +529,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 new PantallaPrincipal(1, 1, 1).setVisible(true);
             }
         });
-    }
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup BotonesVIP;
@@ -487,11 +556,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton RadioOro;
     private javax.swing.JRadioButton RadioPlatino;
     private javax.swing.JRadioButton RadioPreferencial;
+    private javax.swing.JTextArea Salidas;
     private javax.swing.JButton jButtonAtenderSalida;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panelPreferencial;
     private javax.swing.JPanel panelSalidas;
     private javax.swing.JPanel panelVIP;
