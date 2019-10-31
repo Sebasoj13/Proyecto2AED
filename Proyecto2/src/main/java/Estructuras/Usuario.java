@@ -5,15 +5,22 @@ public class Usuario {
     //Atributos
     private String Nombre;
     private String Nacimiento;
-    private int Pasaporte;
+    private String Pasaporte;
     private String Nacionalidad;
     private String Origen;
     private String Destino;
     
     //Constructores
     public Usuario(){ 
+        this.Nombre = null;
+        this.Nacimiento = null;
+        this.Pasaporte = null;
+        this.Nacionalidad = null;
+        this.Origen = null;
+        this.Destino = null;
     }
-    public Usuario(String Nombre,String Nacimiento,int Pasaporte,String Nacionalidad,String Origen,String Destino){
+    
+    public Usuario(String Nombre,String Nacimiento,String Pasaporte,String Nacionalidad,String Origen,String Destino){
         this.Nombre = Nombre;
         this.Nacimiento = Nacimiento;
         this.Pasaporte = Pasaporte;
@@ -29,7 +36,7 @@ public class Usuario {
     public String getNacimiento(){
         return this.Nacimiento;
     }
-    public int getPasaporte(){
+    public String getPasaporte(){
         return this.Pasaporte;
     }
     public String getNacionalidad(){

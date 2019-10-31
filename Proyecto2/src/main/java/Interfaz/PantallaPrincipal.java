@@ -1,12 +1,16 @@
 package Interfaz;
 
+import Estructuras.Cola;
+import Estructuras.Usuario;
 import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 
         
 public class PantallaPrincipal extends javax.swing.JFrame {
+    
     JTextArea cola1 = new JTextArea(); 
     JTextArea cola2 = new JTextArea();
     JTextArea cola3 = new JTextArea();
@@ -32,7 +36,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     JButton atender4 = new JButton("Atender");
     JButton atender5 = new JButton("Atender");
     
+    Cola colaVIP1 = new Cola();
+    Cola colaVIP2 = new Cola();
+    Cola colaVIP3 = new Cola();
+    Cola colaVIP4 = new Cola();
+    Cola colaVIP5 = new Cola();
     
+    Cola colaNormal1 = new Cola();
+    Cola colaNormal2 = new Cola();
+    Cola colaNormal3 = new Cola();
+    Cola colaNormal4 = new Cola();
+    Cola colaNormal5 = new Cola();
+    
+    Cola salidas = new Cola();
     
     public PantallaPrincipal(int numeroVip, int numeroNormal, int tiempoSalida) {
         initComponents();
@@ -204,8 +220,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         RadioPreferencial = new javax.swing.JRadioButton();
         RadioPlatino = new javax.swing.JRadioButton();
         RadioOro = new javax.swing.JRadioButton();
-        LugarDestinotxt = new javax.swing.JTextField();
-        LugarOrigentxt = new javax.swing.JTextField();
+        Destinotxt = new javax.swing.JTextField();
+        Origentxt = new javax.swing.JTextField();
         Nacionalidadtxt = new javax.swing.JTextField();
         Pasaportetxt = new javax.swing.JTextField();
         Fechatxt = new javax.swing.JTextField();
@@ -222,8 +238,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelEspeciales = new javax.swing.JLabel();
         LabelVIP = new javax.swing.JLabel();
         LabelUsuario = new javax.swing.JLabel();
+        panelSalidas = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         panelPreferencial = new javax.swing.JPanel();
         panelVIP = new javax.swing.JPanel();
+        jButtonAtenderSalida = new javax.swing.JButton();
         jButtonRegistrar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
@@ -250,8 +270,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         RadioOro.setText("Oro");
         getContentPane().add(RadioOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 245, -1, -1));
-        getContentPane().add(LugarDestinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 190, -1));
-        getContentPane().add(LugarOrigentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, -1));
+        getContentPane().add(Destinotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 190, -1));
+        getContentPane().add(Origentxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, -1));
         getContentPane().add(Nacionalidadtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 190, -1));
         getContentPane().add(Pasaportetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 190, -1));
         getContentPane().add(Fechatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 190, -1));
@@ -306,6 +326,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         LabelUsuario.setText("Registro");
         getContentPane().add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, -1));
 
+        panelSalidas.setBackground(new java.awt.Color(255, 125, 0));
+        panelSalidas.setLayout(new java.awt.GridLayout(0, 1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        panelSalidas.add(jScrollPane1);
+
+        getContentPane().add(panelSalidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 350, 450, 200));
+
         panelPreferencial.setBackground(new java.awt.Color(255, 125, 0));
         panelPreferencial.setLayout(new java.awt.GridLayout(0, 2));
         getContentPane().add(panelPreferencial, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 450, 250));
@@ -313,6 +344,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         panelVIP.setBackground(new java.awt.Color(255, 125, 0));
         panelVIP.setLayout(new java.awt.GridLayout(0, 2));
         getContentPane().add(panelVIP, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, 460, 230));
+
+        jButtonAtenderSalida.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        jButtonAtenderSalida.setText("Atender");
+        getContentPane().add(jButtonAtenderSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 560, 110, 30));
 
         jButtonRegistrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jButtonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
@@ -348,9 +383,34 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
-        // TODO add your handling code here:
+        if (Nombretxt.getText().equals("")){  //Validaciones para el registro de usuario.
+            JOptionPane.showMessageDialog(null, "Se deben de llenar todos los espacios para registrarse");
+            return;
+        }
+        if (Fechatxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Se deben de llenar todos los espacios para registrarse");
+            return;
+        }
+        if (Pasaportetxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Se deben de llenar todos los espacios para registrarse");
+            return;
+        }
+        if (Nacionalidadtxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Se deben de llenar todos los espacios para registrarse");
+            return;
+        }
+        if (Origentxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Se deben de llenar todos los espacios para registrarse");
+            return;
+        }
+        if (Destinotxt.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Se deben de llenar todos los espacios para registrarse");
+            return;
+        }
+        Usuario User = new Usuario(Nombretxt.getText(), Fechatxt.getText(), Pasaportetxt.getText(), Nacionalidadtxt.getText(), Origentxt.getText(), Destinotxt.getText());  //Creacion de usuario.
         if (RadioPreferencial.isSelected()){
             System.out.println("Preferencial");
+            
         }
         if (RadioOro.isSelected()){
             System.out.println("Oro");
@@ -404,6 +464,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup BotonesVIP;
+    private javax.swing.JTextField Destinotxt;
     private javax.swing.JTextField Fechatxt;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel LabelDestino;
@@ -418,18 +479,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LabelVIP;
     private javax.swing.JLabel LineaH;
     private javax.swing.JLabel LineaV;
-    private javax.swing.JTextField LugarDestinotxt;
-    private javax.swing.JTextField LugarOrigentxt;
     private javax.swing.JTextField Nacionalidadtxt;
     private javax.swing.JTextField Nombretxt;
+    private javax.swing.JTextField Origentxt;
     private javax.swing.JTextField Pasaportetxt;
     private javax.swing.JRadioButton RadioNormal;
     private javax.swing.JRadioButton RadioOro;
     private javax.swing.JRadioButton RadioPlatino;
     private javax.swing.JRadioButton RadioPreferencial;
+    private javax.swing.JButton jButtonAtenderSalida;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panelPreferencial;
+    private javax.swing.JPanel panelSalidas;
     private javax.swing.JPanel panelVIP;
     // End of variables declaration//GEN-END:variables
 }

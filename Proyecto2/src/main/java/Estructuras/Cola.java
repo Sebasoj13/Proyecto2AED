@@ -62,8 +62,8 @@ public class Cola {
        this.size = 0;
    }
    //Métodos
-   public void encolar(Usuario elemento ){
-		this.Rear.setSiguiente(new Nodo(elemento, null));
+   public void encolar(Usuario elemento, int prioridad ){
+		this.Rear.setSiguiente(new Nodo(elemento, prioridad));
 		this.Rear = Rear.getSiguiente();
 		this.size++;
    }
